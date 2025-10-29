@@ -1,0 +1,20 @@
+{
+  "profile": {
+    "name": "Aria Nakamura",
+    "title": "Creative Director",
+    "bio": "Crafting visual stories that resonate through strategic design and thoughtful art direction."
+  },
+  "contact": {
+    "email": "hello@arianakamura.com",
+    "phone": "+81 3 1234 5678",
+    "githubUsername": "arianakamura",
+    "linkedin": "https://linkedin.com/in/arianakamura",
+    "behance": "https://behance.net/arianakamura",
+    "instagram": "https://instagram.com/arianakamura"
+  },
+  "siteConfig": {
+    "domain": "",
+    "title": "Aria Nakamura - Portfolio",
+    "description": "Creative Director Portfolio"
+  }
+}
