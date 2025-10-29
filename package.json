@@ -1,0 +1,12 @@
+{
+  "name": "editorial-split-portfolio",
+  "version": "1.0.0",
+  "description": "A sophisticated editorial-style portfolio template with split-screen layout and magazine-inspired design",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8003"
+  },
+  "keywords": ["portfolio", "template", "editorial", "split-screen", "magazine", "minimal", "monochrome", "sophisticated", "creative-director", "responsive"],
+  "author": "F1jobs.io",
+  "license": "MIT"
+}

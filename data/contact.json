@@ -1,0 +1,20 @@
+{
+  "title": "Let's Create Something Exceptional",
+  "message": "I'm always interested in hearing about ambitious projects and creative collaborations. Whether you're looking to build a brand from scratch or elevate an existing one, let's talk.",
+  "methods": [
+    {
+      "label": "Email",
+      "value": "hello@arianakamura.com",
+      "link": "mailto:hello@arianakamura.com"
+    },
+    {
+      "label": "Phone",
+      "value": "+81 3 1234 5678",
+      "link": "tel:+81312345678"
+    },
+    {
+      "label": "Location",
+      "value": "Tokyo, Japan"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "title": "Selected Projects",
+  "items": [
+    {
+      "title": "Luxe Fashion Rebrand",
+      "category": "Brand Identity",
+      "description": "Complete visual identity redesign for a luxury fashion house, including logo, packaging, and digital presence.",
+      "image": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&h=600&fit=crop",
+      "tags": ["Identity", "Luxury", "Fashion"]
+    },
+    {
+      "title": "Urban Living Campaign",
+      "category": "Art Direction",
+      "description": "Creative direction for a modern real estate development targeting young professionals in metropolitan areas.",
+      "image": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop",
+      "tags": ["Campaign", "Photography", "Real Estate"]
+    },
+    {
+      "title": "Artisan Coffee Co.",
+      "category": "Brand & Packaging",
+      "description": "End-to-end brand creation for specialty coffee roaster, from naming to packaging design and retail experience.",
+      "image": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800&h=600&fit=crop",
+      "tags": ["Branding", "Packaging", "F&B"]
+    },
+    {
+      "title": "Tech Startup Identity",
+      "category": "Digital Brand",
+      "description": "Modern brand system for AI-powered productivity platform, emphasizing simplicity and innovation.",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop",
+      "tags": ["Tech", "Digital", "Startup"]
+    },
+    {
+      "title": "Wellness Retreat Branding",
+      "category": "Hospitality",
+      "description": "Serene visual identity for luxury wellness retreat, blending natural elements with contemporary aesthetics.",
+      "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&h=600&fit=crop",
+      "tags": ["Hospitality", "Wellness", "Luxury"]
+    },
+    {
+      "title": "Editorial Magazine Redesign",
+      "category": "Editorial Design",
+      "description": "Modernized layout system and visual language for established lifestyle publication.",
+      "image": "https://images.unsplash.com/photo-1508780709619-79562169bc64?w=800&h=600&fit=crop",
+      "tags": ["Editorial", "Print", "Publishing"]
+    }
+  ]
+}

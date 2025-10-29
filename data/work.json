@@ -1,0 +1,23 @@
+{
+  "title": "Professional Journey",
+  "items": [
+    {
+      "period": "2020 — Present",
+      "position": "Creative Director",
+      "company": "Monolith Studio",
+      "description": "Leading creative direction for global brands, overseeing a team of 12 designers and art directors. Spearheaded rebrands that increased client revenue by an average of 40%."
+    },
+    {
+      "period": "2017 — 2020",
+      "position": "Senior Art Director",
+      "company": "Black & White Agency",
+      "description": "Directed visual strategies for luxury and lifestyle brands. Led award-winning campaigns that garnered international recognition including D&AD and One Show."
+    },
+    {
+      "period": "2014 — 2017",
+      "position": "Art Director",
+      "company": "Minimal Design Co.",
+      "description": "Developed brand identities and marketing campaigns for startups and established companies. Focused on clean, impactful design solutions."
+    }
+  ]
+}

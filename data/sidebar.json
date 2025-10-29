@@ -1,0 +1,45 @@
+{
+  "logo": "Aria Nakamura",
+  "tagline": "Creative Direction",
+  "navigation": [
+    {
+      "text": "Home",
+      "href": "#hero"
+    },
+    {
+      "text": "About",
+      "href": "#about"
+    },
+    {
+      "text": "Expertise",
+      "href": "#expertise"
+    },
+    {
+      "text": "Experience",
+      "href": "#work"
+    },
+    {
+      "text": "Work",
+      "href": "#projects"
+    },
+    {
+      "text": "Contact",
+      "href": "#contact"
+    }
+  ],
+  "social": [
+    {
+      "name": "LinkedIn",
+      "url": "https://linkedin.com"
+    },
+    {
+      "name": "Behance",
+      "url": "https://behance.net"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://instagram.com"
+    }
+  ],
+  "copyright": "© 2024 Aria Nakamura. All rights reserved."
+}
