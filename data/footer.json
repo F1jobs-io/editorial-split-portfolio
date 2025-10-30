@@ -1,0 +1,9 @@
+{
+  "_instructions": "Footer content and links.",
+  "copyright": "© 2024 Creative Portfolio. All rights reserved.",
+  "socialLinks": [
+    {"platform": "LinkedIn", "url": "https://linkedin.com", "icon": "fab fa-linkedin"},
+    {"platform": "Behance", "url": "https://behance.net", "icon": "fab fa-behance"},
+    {"platform": "Dribbble", "url": "https://dribbble.com", "icon": "fab fa-dribbble"}
+  ]
+}

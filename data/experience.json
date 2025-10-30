@@ -1,0 +1,45 @@
+{
+  "_instructions": "Add your work experience here. Copy the experience object for each job.",
+  "sectionTitle": "Professional Experience",
+  "experiences": [
+    {
+      "title": "Creative Director",
+      "company": "Monolith Studio",
+      "period": "2020 — Present",
+      "location": "Remote",
+      "description": "Leading creative direction for global brands, overseeing a team of 12 designers and art directors.",
+      "responsibilities": [
+        "Leading creative direction for global brands",
+        "Overseeing a team of 12 designers and art directors",
+        "Spearheaded rebrands that increased client revenue by an average of 40%",
+        "Managing multiple high-profile client accounts simultaneously"
+      ]
+    },
+    {
+      "title": "Senior Art Director",
+      "company": "Black & White Agency",
+      "period": "2017 — 2020",
+      "location": "New York, NY",
+      "description": "Directed visual strategies for luxury and lifestyle brands.",
+      "responsibilities": [
+        "Directed visual strategies for luxury and lifestyle brands",
+        "Led award-winning campaigns that garnered international recognition",
+        "Received D&AD and One Show awards",
+        "Managed cross-functional creative teams"
+      ]
+    },
+    {
+      "title": "Art Director",
+      "company": "Minimal Design Co.",
+      "period": "2014 — 2017",
+      "location": "San Francisco, CA",
+      "description": "Developed brand identities and marketing campaigns for startups and established companies.",
+      "responsibilities": [
+        "Developed brand identities and marketing campaigns",
+        "Focused on clean, impactful design solutions",
+        "Worked with startups and established companies",
+        "Created comprehensive brand guidelines"
+      ]
+    }
+  ]
+}

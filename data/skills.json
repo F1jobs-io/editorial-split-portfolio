@@ -1,0 +1,46 @@
+{
+  "_instructions": "Organize your skills into categories. Use Font Awesome icons for visual appeal.",
+  "sectionTitle": "Skills & Expertise",
+  "categories": [
+    {
+      "category": "Brand Identity",
+      "icon": "fas fa-palette",
+      "skills": [
+        {"name": "Logo Design", "level": "expert"},
+        {"name": "Visual Systems", "level": "expert"},
+        {"name": "Brand Strategy", "level": "advanced"},
+        {"name": "Typography", "level": "expert"}
+      ]
+    },
+    {
+      "category": "Art Direction",
+      "icon": "fas fa-camera",
+      "skills": [
+        {"name": "Campaign Direction", "level": "expert"},
+        {"name": "Photoshoot Direction", "level": "expert"},
+        {"name": "Digital Experiences", "level": "advanced"},
+        {"name": "Attention to Detail", "level": "expert"}
+      ]
+    },
+    {
+      "category": "Visual Strategy",
+      "icon": "fas fa-lightbulb",
+      "skills": [
+        {"name": "Strategic Planning", "level": "expert"},
+        {"name": "Business Goals Alignment", "level": "advanced"},
+        {"name": "Creative Excellence", "level": "expert"},
+        {"name": "ROI Optimization", "level": "advanced"}
+      ]
+    },
+    {
+      "category": "Creative Leadership",
+      "icon": "fas fa-users",
+      "skills": [
+        {"name": "Team Management", "level": "expert"},
+        {"name": "Mentorship", "level": "expert"},
+        {"name": "Innovation Culture", "level": "advanced"},
+        {"name": "Collaboration", "level": "expert"}
+      ]
+    }
+  ]
+}

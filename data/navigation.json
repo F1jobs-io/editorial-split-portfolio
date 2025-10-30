@@ -1,0 +1,11 @@
+{
+  "_instructions": "Define your main navigation menu items.",
+  "items": [
+    {"text": "Home", "href": "#hero"},
+    {"text": "About", "href": "#about"},
+    {"text": "Expertise", "href": "#skills"},
+    {"text": "Experience", "href": "#experience"},
+    {"text": "Projects", "href": "#projects"},
+    {"text": "Contact", "href": "#contact"}
+  ]
+}

@@ -1,5 +1,6 @@
 // =============================================
 // EDITORIAL SPLIT PORTFOLIO - MAIN JS
+// STANDARDIZED VERSION - Compatible with aesthetic-portfolio JSON structure
 // =============================================
 
 // Load JSON data
@@ -21,9 +22,10 @@ async function initSite() {
         loadSidebar(),
         loadHero(),
         loadAbout(),
-        loadExpertise(),
-        loadWork(),
+        loadSkills(),
+        loadExperience(),
         loadProjects(),
+        loadEducation(),
         loadContact()
     ]);
 
@@ -39,9 +41,13 @@ async function loadSiteConfig() {
     }
 }
 
-// Load sidebar
+// Load sidebar (from navigation.json + footer.json for standardization)
 async function loadSidebar() {
+    // Try sidebar.json first (editorial specific), fallback to navigation.json
     const sidebar = await loadJSON('sidebar');
+    const navigation = await loadJSON('navigation');
+    const footer = await loadJSON('footer');
+
     if (sidebar) {
         const logo = document.getElementById('logo');
         if (logo) logo.textContent = sidebar.logo || 'Portfolio';
@@ -69,28 +75,62 @@ async function loadSidebar() {
 
         const copyright = document.getElementById('sidebar-copyright');
         if (copyright) copyright.textContent = sidebar.copyright || '';
+    } else if (navigation) {
+        // Use standardized navigation
+        const nav = document.getElementById('sidebar-nav');
+        if (nav && navigation.items) {
+            nav.innerHTML = `
+                <ul>
+                    ${navigation.items.map(item => `
+                        <li><a href="${item.href}">${item.text}</a></li>
+                    `).join('')}
+                </ul>
+            `;
+        }
+    }
+
+    // Load footer data if available
+    if (footer) {
+        const copyright = document.getElementById('sidebar-copyright');
+        if (copyright) copyright.textContent = footer.copyright || '';
     }
 }
 
-// Load hero section
+// Load hero section (STANDARDIZED)
 async function loadHero() {
     const hero = await loadJSON('hero');
     if (hero) {
-        const label = document.getElementById('hero-label');
-        if (label) label.textContent = hero.label || '';
+        // Handle both old and new structure
+        const name = hero.name || '';
+        const title = hero.title || '';
+        const label = hero.label || hero.greeting || '';
 
-        const title = document.getElementById('hero-title');
-        if (title) title.textContent = hero.title || '';
+        const labelEl = document.getElementById('hero-label');
+        if (labelEl) labelEl.textContent = label;
+
+        const titleEl = document.getElementById('hero-title');
+        if (titleEl) titleEl.textContent = name ? `${name} — ${title}` : title;
 
         const subtitle = document.getElementById('hero-subtitle');
-        if (subtitle) subtitle.textContent = hero.subtitle || '';
+        if (subtitle) subtitle.textContent = hero.subtitle || hero.summary || '';
 
+        // Handle CTA - support both structures
         const cta = document.getElementById('hero-cta');
-        if (cta && hero.cta) cta.textContent = hero.cta.text || 'Get in Touch';
+        if (cta) {
+            if (hero.cta && hero.cta.buttons && hero.cta.buttons.length > 0) {
+                // New structure with buttons array
+                cta.innerHTML = hero.cta.buttons.map(btn =>
+                    `<a href="${btn.href}" class="btn btn-${btn.type || 'primary'}">${btn.text}</a>`
+                ).join('');
+            } else if (hero.cta && hero.cta.text) {
+                // Old structure with single button
+                cta.textContent = hero.cta.text;
+            }
+        }
 
         const image = document.getElementById('hero-image');
         if (image && hero.image) {
-            image.innerHTML = `<img src="${hero.image}" alt="${hero.title}">`;
+            image.innerHTML = `<img src="${hero.image}" alt="${name || title}">`;
         }
     }
 }
@@ -122,39 +162,39 @@ async function loadAbout() {
     }
 }
 
-// Load expertise section
-async function loadExpertise() {
-    const expertise = await loadJSON('expertise');
-    if (expertise) {
+// Load skills section (STANDARDIZED - was expertise)
+async function loadSkills() {
+    const skills = await loadJSON('skills');
+    if (skills) {
         const title = document.getElementById('expertise-title');
-        if (title) title.textContent = expertise.title || 'Expertise';
+        if (title) title.textContent = skills.sectionTitle || 'Skills & Expertise';
 
         const grid = document.getElementById('expertise-grid');
-        if (grid && expertise.items) {
-            grid.innerHTML = expertise.items.map((item, index) => `
+        if (grid && skills.categories) {
+            grid.innerHTML = skills.categories.map((category, index) => `
                 <div class="expertise-item">
                     <div class="expertise-number">${String(index + 1).padStart(2, '0')}</div>
-                    <h4 class="expertise-title">${item.title}</h4>
-                    <p class="expertise-description">${item.description}</p>
+                    <h4 class="expertise-title">${category.category}</h4>
+                    <p class="expertise-description">${category.skills ? category.skills.map(s => s.name).join(', ') : ''}</p>
                 </div>
             `).join('');
         }
     }
 }
 
-// Load work experience
-async function loadWork() {
-    const work = await loadJSON('work');
-    if (work) {
+// Load work experience (STANDARDIZED - was work.json with "items")
+async function loadExperience() {
+    const experience = await loadJSON('experience');
+    if (experience) {
         const title = document.getElementById('work-title');
-        if (title) title.textContent = work.title || 'Experience';
+        if (title) title.textContent = experience.sectionTitle || 'Professional Experience';
 
         const timeline = document.getElementById('work-timeline');
-        if (timeline && work.items) {
-            timeline.innerHTML = work.items.map(item => `
+        if (timeline && experience.experiences) {
+            timeline.innerHTML = experience.experiences.map(item => `
                 <div class="work-item">
                     <div class="work-period">${item.period || ''}</div>
-                    <h4 class="work-position">${item.position || ''}</h4>
+                    <h4 class="work-position">${item.title || ''}</h4>
                     <div class="work-company">${item.company || ''}</div>
                     <p class="work-description">${item.description || ''}</p>
                 </div>
@@ -163,34 +203,49 @@ async function loadWork() {
     }
 }
 
-// Load projects
+// Load projects (STANDARDIZED - use "projects" instead of "items")
 async function loadProjects() {
-    const projects = await loadJSON('projects');
-    if (projects) {
+    const projectsData = await loadJSON('projects');
+    if (projectsData) {
         const title = document.getElementById('projects-title');
-        if (title) title.textContent = projects.title || 'Selected Work';
+        if (title) title.textContent = projectsData.sectionTitle || 'Selected Projects';
 
         const grid = document.getElementById('projects-grid');
-        if (grid && projects.items) {
-            grid.innerHTML = projects.items.map(project => `
-                <div class="project-item">
-                    <div class="project-image">
-                        ${project.image ? `<img src="${project.image}" alt="${project.title}">` : ''}
+        const projects = projectsData.projects || projectsData.items || []; // Support both
+
+        if (grid && projects.length > 0) {
+            grid.innerHTML = projects.map(project => {
+                // Support both "tags" and "technologies"
+                const tags = project.technologies || project.tags || [];
+
+                return `
+                    <div class="project-item">
+                        <div class="project-image">
+                            ${project.image ? `<img src="${project.image}" alt="${project.title}">` : ''}
+                        </div>
+                        <div class="project-content">
+                            ${project.category ? `<div class="project-category">${project.category}</div>` : ''}
+                            <h4 class="project-title">${project.title}</h4>
+                            <p class="project-description">${project.description}</p>
+                            ${tags.length > 0 ? `
+                                <div class="project-tags">
+                                    ${tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+                                </div>
+                            ` : ''}
+                        </div>
                     </div>
-                    <div class="project-content">
-                        ${project.category ? `<div class="project-category">${project.category}</div>` : ''}
-                        <h4 class="project-title">${project.title}</h4>
-                        <p class="project-description">${project.description}</p>
-                        ${project.tags ? `
-                            <div class="project-tags">
-                                ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
-                            </div>
-                        ` : ''}
-                    </div>
-                </div>
-            `).join('');
+                `;
+            }).join('');
         }
     }
+}
+
+// Load education section (NEW - standardized)
+async function loadEducation() {
+    const education = await loadJSON('education');
+    // Editorial template doesn't display education by default
+    // But it's available if needed for data generation
+    console.log('Education data loaded (not displayed in this template):', education);
 }
 
 // Load contact section

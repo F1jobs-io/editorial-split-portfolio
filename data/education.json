@@ -1,0 +1,28 @@
+{
+  "_instructions": "Add your education and certifications here.",
+  "sectionTitle": "Education & Certifications",
+  "education": [
+    {
+      "degree": "Bachelor of Fine Arts in Graphic Design",
+      "institution": "Rhode Island School of Design",
+      "period": "2010 — 2014",
+      "location": "Providence, RI",
+      "description": "Focused on visual communication, typography, and brand identity design.",
+      "honors": ["Dean's List", "Graduated with Honors"]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "D&AD Award Winner",
+      "issuer": "D&AD",
+      "date": "2019",
+      "description": "Received professional award for campaign excellence"
+    },
+    {
+      "name": "One Show Award",
+      "issuer": "The One Club",
+      "date": "2018",
+      "description": "International recognition for creative excellence"
+    }
+  ]
+}
